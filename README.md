@@ -1,4 +1,4 @@
-# DSCI-551
+# DSCI-551 (Foundations of Data Management) Grade:A
 ### Lab
 | No. | Related Topic | Answer | Score |
 | ------------- | ------------- | -------------| -------------|
