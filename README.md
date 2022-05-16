@@ -18,7 +18,7 @@
 
 ### Exam
 | No. | File | Score |
-| ------------- | -------------  -------------|
-| 1  | [Midterm 1](DSCI-551 Midterm1.pdf) | 96.5/100 |
-| 2  | [Midterm 2](DSCI-551 Midterm2.pdf)  | 100/100 |
-| 3  | [Final Exam](DSCI-551 Final.pdf)  |  95/100 |
+| ------------- | ------------- | -------------|
+| 1  | [Midterm 1](DSCI-551%20Midterm1.pdf) | 96.5/100 |
+| 2  | [Midterm 2](DSCI-551%20Midterm2.pdf)  | 100/100 |
+| 3  | [Final Exam](DSCI-551%20Final.pdf)  |  95/100 |
