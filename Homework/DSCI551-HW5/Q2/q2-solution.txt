@@ -1,0 +1,70 @@
+###General code:###
+import pyspark.sql.functions as fc
+from pyspark.sql import SparkSession
+    
+spark = SparkSession.builder.enableHiveSupport().getOrCreate()
+churn = spark.read.options(header='True', inferSchema='True', delimiter=',').csv("churn.csv")
+
+##Qa:##
+#Scripts:
+Qa = churn.filter((churn['gender'] == 'Male') & (churn['Churn'] == 'Yes')).count()
+
+#Output:
+930
+
+##Qb:##
+#Scripts:
+churn = churn.withColumn('TotalCharges', fc.col('TotalCharges').cast('double'))
+Qb = churn.filter(churn['Churn'] == 'Yes').groupBy('gender').agg(fc.max('TotalCharges'))
+Qb.show()
+
+#Output:
++------+-----------------+
+|gender|max(TotalCharges)|
++------+-----------------+
+|Female|           8127.6|
+|  Male|           8684.8|
++------+-----------------+
+
+##Qc:##
+#Scripts:
+Qc = churn.filter(churn['Churn'] == 'Yes').groupBy('gender').count()
+Qc.show()
+
+#Output:
++------+-----+
+|gender|count|
++------+-----+
+|Female|  939|
+|  Male|  930|
++------+-----+
+
+##Qd:##
+#Scripts:
+Qd = churn.groupBy(['churn', 'contract']).count().withColumnRenamed("count", "cnt").orderBy('churn', fc.desc('cnt'))
+Qd.show()
+
+#Output:
++-----+--------------+----+
+|churn|      contract| cnt|
++-----+--------------+----+
+|   No|Month-to-month|2220|
+|   No|      Two year|1647|
+|   No|      One year|1307|
+|  Yes|Month-to-month|1655|
+|  Yes|      One year| 166|
+|  Yes|      Two year|  48|
++-----+--------------+----+
+
+##Qe:##
+#Scripts:
+Qe = churn.groupBy(['gender', 'churn']).count().where(fc.col('count') > 1000)
+Qe.show()
+
+#Output:
++------+-----+-----+
+|gender|churn|count|
++------+-----+-----+
+|  Male|   No| 2625|
+|Female|   No| 2549|
++------+-----+-----+

@@ -1,0 +1,31 @@
+###General code:###
+lines = spark.sparkContext.textFile("churn.csv")
+
+##Qa:##
+#Scripts:
+def splitFunca(row):
+    row_list = row.split(',')
+    if row_list[1] == 'Male' and row_list[-1] == 'Yes':
+        return True
+
+Qa_RDD = lines.map(splitFunca).filter(lambda row: row is not None).count()
+print("RDD_Qa: ",Qa_RDD)
+
+#Output:
+RDD_Qa:  930
+
+##Qb:##
+#Scripts:
+
+def splitFuncb(row):
+    row_list = row.split(',')
+    if row_list[-1] == 'Yes':
+        if row_list[-2] == ' ':
+            row_list[-2] = '0'
+        return (row_list[1], float(row_list[-2]))
+
+Qb_RDD = lines.map(splitFuncb).filter(lambda row: row is not None).groupByKey().map(lambda x:(x[0], max(x[1]))).collect()
+print("RDD_Qb: ",Qb_RDD)
+
+#Output:
+RDD_Qb:  [('Male', 8684.8), ('Female', 8127.6)]
