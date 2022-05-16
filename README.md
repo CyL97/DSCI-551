@@ -23,4 +23,6 @@
 | 2  | [Midterm 2](DSCI-551%20Midterm2.pdf)  | 100/100 |
 | 3  | [Final Exam](DSCI-551%20Final.pdf)  |  95/100 |
 
-### [Project](Final_Report_.Chaoyu Li,%20Joanna%20Xiao,%20Yuxi%20Fan.pdf)(Score:101.33/100)
+### [Project](Final_Report_.Chaoyu%20Li,%20Joanna%20Xiao,%20Yuxi%20Fan.pdf)(Score:101.33/100)
+
+### [Personal Note](DSCI551_Personal_Note.pdf)
