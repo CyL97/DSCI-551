@@ -14,7 +14,7 @@
 | 2  | [XML & XPath](Homework/DSCI551-HW2/hw2-xml-xpath.pdf)  | [Answer2](Homework/DSCI551-HW2/stats.py) | 100/100 |
 | 3  | [MySQL](Homework/DSCI551-HW3/hw3.pdf)  | [Answer3](Homework/DSCI551-HW3/hw3/hw3_grade.sh) | 100/100 |
 | 4  | [Indexing & Query Execution](Lab/DSCI551-Lab4/lab4-dynamodb.docx)  | [Answer4](Homework/DSCI551-HW4/hw4-index-qe.docx) | 93/100 |
-| 5  | [MapReduce & Spark](Homework/DSCI551-HW5/hw5-mapreduce-spark.docx)  | [Answer1](Homework/DSCI551-HW5/main.py) | 100/100 |
+| 5  | [MapReduce & Spark](Homework/DSCI551-HW5/hw5-mapreduce-spark.docx)  | [Answer5](Homework/DSCI551-HW5/main.py) | 100/100 |
 
 ### Exam
 | No. | File | Score |
